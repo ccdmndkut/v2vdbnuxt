@@ -4,8 +4,9 @@ module.exports = {
   mode: 'universal',
   auth: {
     strategies: {
-      fb: {
-        key: 'AIzaSyDMbILM1a366tYFM3-nOLwCUXapJ8ETqmw'
+      google: {
+        client_id:
+          '524576132881-rsu914o5d5ef6a3v198put5fssh98ju3.apps.googleusercontent.com'
       }
     }
   },

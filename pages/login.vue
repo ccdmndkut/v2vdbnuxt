@@ -68,7 +68,7 @@ export default {
     }
   },
   computed: {
-    strategies: () => [{ key: 'fb', name: 'fb', color: '#4284f4' }],
+    strategies: () => [{ key: 'google', name: 'Google', color: '#4284f4' }],
     redirect() {
       return (
         this.$route.query.redirect &&
@@ -95,13 +95,9 @@ export default {
 
     async login() {
       this.error = null
-      return this.$auth
-        .loginWith('fb', {
-          data: { email: this.email, password: this.password }
-        })
-        .catch(e => {
-          this.error = e + ''
-        })
+      return this.$auth.loginWith('google').catch(e => {
+        this.error = e + ''
+      })
 
       //   const email = this.email
       //   const password = this.password

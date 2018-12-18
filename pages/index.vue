@@ -1,5 +1,10 @@
 <template>
-  <div></div>
+  <div>
+    {{inb}}
+    <div>
+      <v-btn color="success" @click="lout">logout</v-btn>
+    </div>
+  </div>
 
   <!-- <div>
     <v-text-field v-model="email" label="username"></v-text-field>
@@ -22,13 +27,21 @@
 
 <script>
 export default {
-  layout: 'login',
+  layout: 'default',
   data() {
     return {}
   },
-
-  methods: {}
+  computed: {
+    inb() {
+      return this.$auth.$state
+    }
+  },
+  methods: {
+    async lout() {
+      await this.$auth.logout()
+    }
+  }
 }
 </script>
-<style>
+<style scoped>
 </style>
