@@ -2,7 +2,22 @@ const pkg = require('./package')
 
 module.exports = {
   mode: 'universal',
-
+  auth: {
+    strategies: {
+      fb: {
+        key: 'AIzaSyDMbILM1a366tYFM3-nOLwCUXapJ8ETqmw'
+      }
+    }
+  },
+  router: {
+    middleware: ['auth']
+  },
+  redirect: {
+    login: '/login',
+    logout: '/',
+    callback: '/login',
+    home: '/'
+  },
   /*
   ** Headers of the page
   */
@@ -43,7 +58,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/auth'
   ],
   /*
   ** Axios module configuration
