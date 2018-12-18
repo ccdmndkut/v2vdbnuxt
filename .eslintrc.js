@@ -9,13 +9,11 @@ module.exports = {
   },
   extends: [
     'plugin:vue/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended', // we added this line
+    '@vue/prettier'
   ],
   // required to lint *.vue files
-  plugins: [
-    'vue',
-    'prettier'
-  ],
+  plugins: ['vue', 'prettier'],
   // add your custom rules here
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
